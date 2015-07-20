@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38994B51395EC22AD14DBDF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9191787FF210FC62580242E0 /* libPods.a */; };
+		5A6990081B5D280A00282CEE /* RSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6990071B5D280A00282CEE /* RSUser.m */; };
 		5AE3A28A1B593032003568AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE3A2891B593032003568AE /* Foundation.framework */; };
 		5AE3A28C1B593032003568AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE3A28B1B593032003568AE /* CoreGraphics.framework */; };
 		5AE3A28E1B593032003568AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE3A28D1B593032003568AE /* UIKit.framework */; };
@@ -21,6 +23,7 @@
 		5AE3A2AB1B593032003568AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE3A28D1B593032003568AE /* UIKit.framework */; };
 		5AE3A2B31B593033003568AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AE3A2B11B593033003568AE /* InfoPlist.strings */; };
 		5AE3A2B51B593033003568AE /* _5LessonAPITestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE3A2B41B593033003568AE /* _5LessonAPITestTests.m */; };
+		5AEFF7A31B59392400737C01 /* RSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFF7A21B59392400737C01 /* RSServerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49707A3842BC6766DCC2E4C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5A6990061B5D280A00282CEE /* RSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUser.h; sourceTree = "<group>"; };
+		5A6990071B5D280A00282CEE /* RSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUser.m; sourceTree = "<group>"; };
 		5AE3A2861B593031003568AE /* 45LessonAPITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 45LessonAPITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE3A2891B593032003568AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AE3A28B1B593032003568AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +59,10 @@
 		5AE3A2B01B593033003568AE /* 45LessonAPITestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "45LessonAPITestTests-Info.plist"; sourceTree = "<group>"; };
 		5AE3A2B21B593033003568AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5AE3A2B41B593033003568AE /* _5LessonAPITestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _5LessonAPITestTests.m; sourceTree = "<group>"; };
+		5AEFF7A11B59392400737C01 /* RSServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSServerManager.h; sourceTree = "<group>"; };
+		5AEFF7A21B59392400737C01 /* RSServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSServerManager.m; sourceTree = "<group>"; };
+		71E3DBB7B26D87A1F9A63A9A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9191787FF210FC62580242E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,7 @@
 				5AE3A28C1B593032003568AE /* CoreGraphics.framework in Frameworks */,
 				5AE3A28E1B593032003568AE /* UIKit.framework in Frameworks */,
 				5AE3A28A1B593032003568AE /* Foundation.framework in Frameworks */,
+				38994B51395EC22AD14DBDF9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +97,7 @@
 				5AE3A2AE1B593032003568AE /* 45LessonAPITestTests */,
 				5AE3A2881B593031003568AE /* Frameworks */,
 				5AE3A2871B593031003568AE /* Products */,
+				E2A02B380428229FCC157A83 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +117,7 @@
 				5AE3A28B1B593032003568AE /* CoreGraphics.framework */,
 				5AE3A28D1B593032003568AE /* UIKit.framework */,
 				5AE3A2A81B593032003568AE /* XCTest.framework */,
+				9191787FF210FC62580242E0 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,6 +130,10 @@
 				5AE3A29B1B593032003568AE /* Main.storyboard */,
 				5AE3A29E1B593032003568AE /* RSViewController.h */,
 				5AE3A29F1B593032003568AE /* RSViewController.m */,
+				5A6990061B5D280A00282CEE /* RSUser.h */,
+				5A6990071B5D280A00282CEE /* RSUser.m */,
+				5AEFF7A11B59392400737C01 /* RSServerManager.h */,
+				5AEFF7A21B59392400737C01 /* RSServerManager.m */,
 				5AE3A2A11B593032003568AE /* Images.xcassets */,
 				5AE3A2901B593032003568AE /* Supporting Files */,
 			);
@@ -152,6 +169,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E2A02B380428229FCC157A83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71E3DBB7B26D87A1F9A63A9A /* Pods.debug.xcconfig */,
+				49707A3842BC6766DCC2E4C1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AE3A2B81B593033003568AE /* Build configuration list for PBXNativeTarget "45LessonAPITest" */;
 			buildPhases = (
+				DB0EC96AA0A5FE8918290904 /* Check Pods Manifest.lock */,
 				5AE3A2821B593031003568AE /* Sources */,
 				5AE3A2831B593031003568AE /* Frameworks */,
 				5AE3A2841B593031003568AE /* Resources */,
+				C564578FBBE58C6D62F125B7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,14 +273,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C564578FBBE58C6D62F125B7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB0EC96AA0A5FE8918290904 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5AE3A2821B593031003568AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5AE3A2961B593032003568AE /* main.m in Sources */,
+				5AEFF7A31B59392400737C01 /* RSServerManager.m in Sources */,
 				5AE3A29A1B593032003568AE /* RSAppDelegate.m in Sources */,
 				5AE3A2A01B593032003568AE /* RSViewController.m in Sources */,
+				5A6990081B5D280A00282CEE /* RSUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,12 +437,14 @@
 		};
 		5AE3A2B91B593033003568AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71E3DBB7B26D87A1F9A63A9A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "45LessonAPITest/45LessonAPITest-Prefix.pch";
 				INFOPLIST_FILE = "45LessonAPITest/45LessonAPITest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -387,12 +452,14 @@
 		};
 		5AE3A2BA1B593033003568AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49707A3842BC6766DCC2E4C1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "45LessonAPITest/45LessonAPITest-Prefix.pch";
 				INFOPLIST_FILE = "45LessonAPITest/45LessonAPITest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -457,6 +524,7 @@
 				5AE3A2BA1B593033003568AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AE3A2BB1B593033003568AE /* Build configuration list for PBXNativeTarget "45LessonAPITestTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +533,7 @@
 				5AE3A2BD1B593033003568AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
