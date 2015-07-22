@@ -48,14 +48,14 @@
                              @"random",   @"order",
                              @(count),    @"count",
                              @(offset),   @"offset",
-                             @"photo_50", @"fields",
+                             @"photo_50, domain", @"fields",
                              @"nom",      @"name_case", nil];
 
     [self.requestOperationManager
      GET:@"friends.get"
      parameters:params
      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        //NSLog(@"JSON: %@", responseObject);
          
          NSArray *dictsArray = [responseObject objectForKey:@"response"];
          
@@ -66,11 +66,9 @@
              [objectsArray addObject:user];
          }
          
-         
          if (success) {
              success(objectsArray);
          }
-         
     }
      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -81,6 +79,46 @@
     }];
     
 }
+
+
+- (void) getUserWithId:(NSString*)user_id onSuccess:(void (^)(NSArray *))success onFailure:(void (^)(NSError *, NSInteger))failure {
+    
+    NSDictionary *userParameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    user_id, @"user_ids",
+                                    @"photo_200, domain", @"fields",
+                                    @"nom", @"name_case", nil];
+    
+    [self.requestOperationManager
+     GET:@"users.get"
+     parameters:userParameters
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+         
+         NSMutableArray *objectsArray = [NSMutableArray array];
+         
+         //NSDictionary *dict = [responseObject objectForKey:@"response"];
+         NSArray * arr = [responseObject objectForKey:@"response"];
+         for (NSDictionary * internalDictionary in arr) {
+             RSUser *user = [[RSUser alloc] initWithServerResponse:internalDictionary];
+             [objectsArray addObject:user];
+         }
+         
+         if (success) {
+             success(objectsArray);
+         }
+    }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+         if (failure) {
+             failure(error, operation.response.statusCode);
+         }
+    }];
+}
+
+
+
+
+
 
 
 @end

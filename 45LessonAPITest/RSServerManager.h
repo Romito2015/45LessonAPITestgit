@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RSUser.h"
 
 
 @interface RSServerManager : NSObject
@@ -17,6 +18,10 @@
                         count: (NSInteger) count
                     onSuccess: (void(^)(NSArray *friends)) success
                     onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
+
+- (void) getUserWithId: (NSString *) user_id
+             onSuccess:(void(^)(NSArray *user)) success
+             onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
 
 
 

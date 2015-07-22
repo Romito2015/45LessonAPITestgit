@@ -10,11 +10,10 @@
 #import "RSServerManager.h"
 #import "RSUser.h"
 #import "UIImageView+AFNetworking.h"
+#import "RSDetailUser.h"
 
 @interface RSViewController ()
-
 @property (strong, nonatomic) NSMutableArray *friendsArray;
-
 @end
 
 @implementation RSViewController
@@ -24,7 +23,6 @@ static NSInteger friendsInRequest = 20;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     self.friendsArray = [NSMutableArray array];
     
@@ -65,8 +63,6 @@ static NSInteger friendsInRequest = 20;
      onFailure:^(NSError *error, NSInteger statusCode) {
          NSLog(@"error = %@, code = %d",[error localizedDescription], statusCode);
      }];
-    
-    
 }
 
 #pragma mark - UITableViewDataSource
@@ -80,6 +76,7 @@ static NSInteger friendsInRequest = 20;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *identifier = @"Cell";
+    static NSString *addCells = @"addCells";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
@@ -87,7 +84,10 @@ static NSInteger friendsInRequest = 20;
         
     }
     if (indexPath.row == [self.friendsArray count]) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addCells];
         cell.textLabel.text = @"Load more";
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.backgroundColor = [UIColor grayColor];
         cell.imageView.image = nil;
         
     } else {
@@ -96,8 +96,7 @@ static NSInteger friendsInRequest = 20;
         
         __weak UITableViewCell *weakCell = cell;
         
-        NSURLRequest *request = [NSURLRequest requestWithURL:friend.imageURL];
-        
+        NSURLRequest *request = [NSURLRequest requestWithURL:friend.imageURL50];
         
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
         
@@ -112,7 +111,6 @@ static NSInteger friendsInRequest = 20;
                                        }];
     }
     return cell;
-    
 }
 
 #pragma mark - UITableViewDelegate
@@ -123,8 +121,27 @@ static NSInteger friendsInRequest = 20;
     }
 }
 
-
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        RSDetailUser *destViewController = segue.destinationViewController;
+        if (indexPath.row == [self.friendsArray count]) {
+            [destViewController setIsAccessibilityElement:NO];
+        } else {
+        
+        RSUser *userForDetail = [self.friendsArray objectAtIndex:indexPath.row];
+        destViewController.userNameString = [NSString stringWithFormat:@"%@ %@ %@",
+                                            userForDetail.firstName,
+                                            userForDetail.lastName,
+                                            userForDetail.user_id];
+          
+            destViewController.user_id = userForDetail.user_id;
+        }
+    }
+}
 
 
 @end

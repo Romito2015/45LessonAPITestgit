@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		38994B51395EC22AD14DBDF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9191787FF210FC62580242E0 /* libPods.a */; };
 		5A6990081B5D280A00282CEE /* RSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6990071B5D280A00282CEE /* RSUser.m */; };
+		5A69900B1B5D585800282CEE /* RSDetailUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A69900A1B5D585800282CEE /* RSDetailUser.m */; };
+		5ACCA1E01B5E358800019A66 /* noUser.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ACCA1DF1B5E358800019A66 /* noUser.png */; };
 		5AE3A28A1B593032003568AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE3A2891B593032003568AE /* Foundation.framework */; };
 		5AE3A28C1B593032003568AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE3A28B1B593032003568AE /* CoreGraphics.framework */; };
 		5AE3A28E1B593032003568AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE3A28D1B593032003568AE /* UIKit.framework */; };
@@ -40,6 +42,9 @@
 		49707A3842BC6766DCC2E4C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5A6990061B5D280A00282CEE /* RSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUser.h; sourceTree = "<group>"; };
 		5A6990071B5D280A00282CEE /* RSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUser.m; sourceTree = "<group>"; };
+		5A6990091B5D585800282CEE /* RSDetailUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDetailUser.h; sourceTree = "<group>"; };
+		5A69900A1B5D585800282CEE /* RSDetailUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDetailUser.m; sourceTree = "<group>"; };
+		5ACCA1DF1B5E358800019A66 /* noUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noUser.png; sourceTree = "<group>"; };
 		5AE3A2861B593031003568AE /* 45LessonAPITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 45LessonAPITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE3A2891B593032003568AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AE3A28B1B593032003568AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5ACCA1DE1B5E358800019A66 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				5ACCA1DF1B5E358800019A66 /* noUser.png */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
 		5AE3A27D1B593031003568AE = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +141,8 @@
 				5AE3A2981B593032003568AE /* RSAppDelegate.h */,
 				5AE3A2991B593032003568AE /* RSAppDelegate.m */,
 				5AE3A29B1B593032003568AE /* Main.storyboard */,
+				5A6990091B5D585800282CEE /* RSDetailUser.h */,
+				5A69900A1B5D585800282CEE /* RSDetailUser.m */,
 				5AE3A29E1B593032003568AE /* RSViewController.h */,
 				5AE3A29F1B593032003568AE /* RSViewController.m */,
 				5A6990061B5D280A00282CEE /* RSUser.h */,
@@ -135,6 +150,7 @@
 				5AEFF7A11B59392400737C01 /* RSServerManager.h */,
 				5AEFF7A21B59392400737C01 /* RSServerManager.m */,
 				5AE3A2A11B593032003568AE /* Images.xcassets */,
+				5ACCA1DE1B5E358800019A66 /* Resourses */,
 				5AE3A2901B593032003568AE /* Supporting Files */,
 			);
 			path = 45LessonAPITest;
@@ -258,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE3A2A21B593032003568AE /* Images.xcassets in Resources */,
+				5ACCA1E01B5E358800019A66 /* noUser.png in Resources */,
 				5AE3A2941B593032003568AE /* InfoPlist.strings in Resources */,
 				5AE3A29D1B593032003568AE /* Main.storyboard in Resources */,
 			);
@@ -311,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A69900B1B5D585800282CEE /* RSDetailUser.m in Sources */,
 				5AE3A2961B593032003568AE /* main.m in Sources */,
 				5AEFF7A31B59392400737C01 /* RSServerManager.m in Sources */,
 				5AE3A29A1B593032003568AE /* RSAppDelegate.m in Sources */,

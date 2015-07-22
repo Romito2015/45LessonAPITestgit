@@ -10,9 +10,11 @@
 
 @interface RSUser : NSObject
 
+@property (strong, nonatomic) NSString *user_id;
 @property (strong, nonatomic) NSString *firstName;
 @property (strong, nonatomic) NSString *lastName;
-@property (strong, nonatomic) NSURL *imageURL;
+@property (strong, nonatomic) NSURL *imageURL50;
+@property (strong, nonatomic) NSURL *imageURL200;
 
 - (id) initWithServerResponse:(NSDictionary *) responseObject;
 
