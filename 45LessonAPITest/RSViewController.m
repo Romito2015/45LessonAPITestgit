@@ -13,7 +13,10 @@
 #import "RSDetailUser.h"
 
 @interface RSViewController ()
+
 @property (strong, nonatomic) NSMutableArray *friendsArray;
+@property (assign, nonatomic) BOOL firstTimeAppear;
+
 @end
 
 @implementation RSViewController
@@ -26,7 +29,23 @@ static NSInteger friendsInRequest = 20;
     
     self.friendsArray = [NSMutableArray array];
     
-    [self getfrieendsFromServer];
+    //[self getfrieendsFromServer];
+    self.firstTimeAppear =YES;
+    
+    
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    if (self.firstTimeAppear) {
+        self.firstTimeAppear = NO;
+        [[RSServerManager sharedManager] authorizeUser:^(RSUser *user) {
+            
+        }];
+    }
+    
     
 }
 

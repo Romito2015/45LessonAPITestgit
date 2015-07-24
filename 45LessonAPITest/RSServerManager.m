@@ -9,10 +9,13 @@
 #import "RSServerManager.h"
 #import "AFNetworking.h"
 #import "RSUser.h"
+#import "RSLoginViewController.h"
+#import "RSAccessToken.h"
 
 @interface RSServerManager()
 
 @property (strong, nonatomic) AFHTTPRequestOperationManager *requestOperationManager;
+@property (strong, nonatomic) RSAccessToken *accessToken;
 
 @end
 
@@ -39,6 +42,23 @@
         self.requestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
     }
     return self;
+}
+
+//5004937
+
+- (void) authorizeUser:(void (^)(RSUser *))completion {
+    
+    RSLoginViewController *vc = [[RSLoginViewController alloc] initWithCompletionBlock:^(RSAccessToken *token) {
+        self.accessToken = token;
+        
+        if (completion) {
+            completion(nil);
+        }
+    }];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    UIViewController *mainVc = [[[[UIApplication sharedApplication] windows] firstObject] rootViewController];
+    [mainVc presentViewController:nav animated:YES completion:nil];
+    
 }
 
 - (void) getFriendsWithOffset:(NSInteger)offset count:(NSInteger)count onSuccess:(void (^)(NSArray *))success onFailure:(void (^)(NSError *, NSInteger))failure {

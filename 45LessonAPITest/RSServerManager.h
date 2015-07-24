@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RSUser.h"
 
+@class RSUser;
 
 @interface RSServerManager : NSObject
 
+@property (strong, nonatomic ,readonly) RSUser *currentUser;
+
 + (RSServerManager *) sharedManager;
+
+- (void) authorizeUser: (void(^) (RSUser *user)) completion;
 
 - (void) getFriendsWithOffset: (NSInteger) offset
                         count: (NSInteger) count

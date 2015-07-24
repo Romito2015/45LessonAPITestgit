@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		38994B51395EC22AD14DBDF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9191787FF210FC62580242E0 /* libPods.a */; };
+		5A5E72DC1B5FC3F3001461CC /* RSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E72DB1B5FC3F3001461CC /* RSLoginViewController.m */; };
+		5A5E72DF1B5FC4B0001461CC /* RSAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E72DE1B5FC4B0001461CC /* RSAccessToken.m */; };
 		5A6990081B5D280A00282CEE /* RSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6990071B5D280A00282CEE /* RSUser.m */; };
 		5A69900B1B5D585800282CEE /* RSDetailUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A69900A1B5D585800282CEE /* RSDetailUser.m */; };
 		5ACCA1E01B5E358800019A66 /* noUser.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ACCA1DF1B5E358800019A66 /* noUser.png */; };
@@ -40,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		49707A3842BC6766DCC2E4C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5A5E72DA1B5FC3F3001461CC /* RSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLoginViewController.h; sourceTree = "<group>"; };
+		5A5E72DB1B5FC3F3001461CC /* RSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLoginViewController.m; sourceTree = "<group>"; };
+		5A5E72DD1B5FC4B0001461CC /* RSAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAccessToken.h; sourceTree = "<group>"; };
+		5A5E72DE1B5FC4B0001461CC /* RSAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAccessToken.m; sourceTree = "<group>"; };
 		5A6990061B5D280A00282CEE /* RSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUser.h; sourceTree = "<group>"; };
 		5A6990071B5D280A00282CEE /* RSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUser.m; sourceTree = "<group>"; };
 		5A6990091B5D585800282CEE /* RSDetailUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDetailUser.h; sourceTree = "<group>"; };
@@ -145,6 +151,10 @@
 				5A69900A1B5D585800282CEE /* RSDetailUser.m */,
 				5AE3A29E1B593032003568AE /* RSViewController.h */,
 				5AE3A29F1B593032003568AE /* RSViewController.m */,
+				5A5E72DA1B5FC3F3001461CC /* RSLoginViewController.h */,
+				5A5E72DB1B5FC3F3001461CC /* RSLoginViewController.m */,
+				5A5E72DD1B5FC4B0001461CC /* RSAccessToken.h */,
+				5A5E72DE1B5FC4B0001461CC /* RSAccessToken.m */,
 				5A6990061B5D280A00282CEE /* RSUser.h */,
 				5A6990071B5D280A00282CEE /* RSUser.m */,
 				5AEFF7A11B59392400737C01 /* RSServerManager.h */,
@@ -328,7 +338,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5E72DC1B5FC3F3001461CC /* RSLoginViewController.m in Sources */,
 				5A69900B1B5D585800282CEE /* RSDetailUser.m in Sources */,
+				5A5E72DF1B5FC4B0001461CC /* RSAccessToken.m in Sources */,
 				5AE3A2961B593032003568AE /* main.m in Sources */,
 				5AEFF7A31B59392400737C01 /* RSServerManager.m in Sources */,
 				5AE3A29A1B593032003568AE /* RSAppDelegate.m in Sources */,

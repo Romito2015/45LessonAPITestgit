@@ -89,6 +89,7 @@
                     <navigationItem key="navigationItem" id="iIH-5t-14B">
                         <barButtonItem key="backBarButtonItem" title="back" id="Qqm-2g-9bD"/>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="avatar200" destination="LUD-H0-xxc" id="rxa-TH-3cE"/>
                         <outlet property="userName" destination="n2E-h9-zDN" id="fFH-3w-npy"/>
