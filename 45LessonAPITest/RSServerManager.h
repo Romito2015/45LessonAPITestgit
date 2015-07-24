@@ -24,7 +24,7 @@
                     onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
 
 - (void) getUserWithId: (NSString *) user_id
-             onSuccess:(void(^)(NSArray *user)) success
+             onSuccess:(void(^)(RSUser *user)) success
              onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
 
 

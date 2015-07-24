@@ -42,7 +42,7 @@ static NSInteger friendsInRequest = 20;
     if (self.firstTimeAppear) {
         self.firstTimeAppear = NO;
         [[RSServerManager sharedManager] authorizeUser:^(RSUser *user) {
-            
+            NSLog(@"AUTHORIZED USER : %@ %@",user.firstName, user.lastName);
         }];
     }
     

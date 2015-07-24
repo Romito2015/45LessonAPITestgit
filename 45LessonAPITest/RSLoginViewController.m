@@ -92,8 +92,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
   
-    http://com.yourspace/#access_token=0acbefb6454b628c24762c3cc14cbe01ce7a1034ffee1178462560e62db5e298fabb811dea3fb9fda06ad&expires_in=86400&user_id=6867252
-    
+    //http://com.yourspace/#access_token=0acbefb6454b628c24762c3cc14cbe01ce7a1034ffee1178462560e62db5e298fabb811dea3fb9fda06ad&expires_in=86400&user_id=6867252
     
     
     if ([[[request URL] host] isEqualToString:@"com.yourspace"]) {
@@ -144,19 +143,5 @@
     return YES;
     
 }
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

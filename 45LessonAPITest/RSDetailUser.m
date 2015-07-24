@@ -45,14 +45,10 @@
 
 - (void) getUserFromServer {
     
-    [[RSServerManager sharedManager] getUserWithId:self.user_id onSuccess:^(NSArray *userInArray) {
-        //[self.userArray addObjectsFromArray:userInArray];
-        for (RSUser * user in userInArray) {
-            
-                        
-       
+    [[RSServerManager sharedManager] getUserWithId:self.user_id onSuccess:^(RSUser *user) {
+
             UIImage *placeholderImage = [[UIImage alloc] initWithContentsOfFile:@"noUser.png"];
-            [self.avatar200 setImageWithURL:user.imageURL200 placeholderImage:placeholderImage];        }
+            [self.avatar200 setImageWithURL:user.imageURL200 placeholderImage:placeholderImage];
         
     } onFailure:^(NSError *error, NSInteger statusCode) {
         NSLog(@"error = %@, code = %d",[error localizedDescription], statusCode);

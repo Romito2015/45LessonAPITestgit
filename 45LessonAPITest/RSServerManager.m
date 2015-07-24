@@ -17,6 +17,8 @@
 @property (strong, nonatomic) AFHTTPRequestOperationManager *requestOperationManager;
 @property (strong, nonatomic) RSAccessToken *accessToken;
 
+@property (strong, nonatomic) RSUser *user;
+
 @end
 
 @implementation RSServerManager
@@ -44,14 +46,24 @@
     return self;
 }
 
-//5004937
 
 - (void) authorizeUser:(void (^)(RSUser *))completion {
     
     RSLoginViewController *vc = [[RSLoginViewController alloc] initWithCompletionBlock:^(RSAccessToken *token) {
         self.accessToken = token;
         
-        if (completion) {
+        if (token) {
+            [self getUserWithId:self.accessToken.userID
+                      onSuccess:^(RSUser *user) {
+                          if (completion) {
+                              completion(user);
+                          }
+                      } onFailure:^(NSError *error, NSInteger statusCode) {
+                          if (completion) {
+                              completion(nil);
+                          }
+                      }];
+        } else if (completion) {
             completion(nil);
         }
     }];
@@ -101,7 +113,7 @@
 }
 
 
-- (void) getUserWithId:(NSString*)user_id onSuccess:(void (^)(NSArray *))success onFailure:(void (^)(NSError *, NSInteger))failure {
+- (void) getUserWithId:(NSString*)user_id onSuccess:(void (^)(RSUser *))success onFailure:(void (^)(NSError *, NSInteger))failure {
     
     NSDictionary *userParameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                     user_id, @"user_ids",
@@ -112,19 +124,14 @@
      GET:@"users.get"
      parameters:userParameters
      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        NSLog(@"JSON vkUser: %@", responseObject);
          
-         NSMutableArray *objectsArray = [NSMutableArray array];
-         
-         //NSDictionary *dict = [responseObject objectForKey:@"response"];
-         NSArray * arr = [responseObject objectForKey:@"response"];
-         for (NSDictionary * internalDictionary in arr) {
-             RSUser *user = [[RSUser alloc] initWithServerResponse:internalDictionary];
-             [objectsArray addObject:user];
-         }
+         NSArray * array = [responseObject objectForKey:@"response"];
+         NSDictionary * internalDictionary = [array firstObject];
+                     self.user = [[RSUser alloc] initWithServerResponse:internalDictionary];
          
          if (success) {
-             success(objectsArray);
+             success(self.user);
          }
     }
      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -134,11 +141,5 @@
          }
     }];
 }
-
-
-
-
-
-
 
 @end
